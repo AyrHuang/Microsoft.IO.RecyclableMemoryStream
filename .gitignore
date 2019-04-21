@@ -1,0 +1,9 @@
+\.vs
+
+Microsoft\.IO\.RecyclableMemoryStream/obj
+
+Microsoft\.IO\.RecyclableMemoryStream/bin
+
+Microsoft\.IO\.RecyclableMemoryStream\.UnitTests/obj
+
+Microsoft\.IO\.RecyclableMemoryStream\.UnitTests/bin
