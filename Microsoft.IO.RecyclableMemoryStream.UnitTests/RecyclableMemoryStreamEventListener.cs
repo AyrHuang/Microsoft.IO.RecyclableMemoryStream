@@ -1,4 +1,4 @@
-﻿// The MIT License (MIT)
+// The MIT License (MIT)
 // 
 // Copyright (c) 2015-2016 Microsoft
 // 
@@ -32,10 +32,7 @@ namespace Microsoft.IO.RecyclableMemoryStream.UnitTests
 
         public RecyclableMemoryStreamEventListener()
         {
-            this.EnableEvents(
-                RecyclableMemoryStreamManager.Events.Writer,
-                EventLevel.Verbose
-            );
+            this.EnableEvents(RecyclableMemoryStreamManager.Events.Writer, EventLevel.Verbose);
         }
 
         public bool MemoryStreamDoubleDisposeCalled { get; private set; }
@@ -43,13 +40,10 @@ namespace Microsoft.IO.RecyclableMemoryStream.UnitTests
         protected override void OnEventWritten(EventWrittenEventArgs eventData)
         {
             const int TagIndex = 1;
-            OnEvent(
-                eventData.EventId,
-                (string)eventData.Payload[TagIndex]
-            );
+            this.OnEventWritten(eventData.EventId, (string)eventData.Payload[TagIndex]);
         }
 
-        public virtual void OnEvent(int eventId, string tag)
+        public void OnEventWritten(int eventId, string tag)
         {
             switch (eventId)
             {
